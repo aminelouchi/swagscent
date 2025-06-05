@@ -1,0 +1,2425 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwagScent - Parfums & Articles Personnalisés</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6a4c93;
+            --secondary: #8a5a44;
+            --accent: #f8c537;
+            --light: #f9f5ff;
+            --dark: #1a1423;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Header */
+/* Variables couleurs modernes */
+:root {
+    --primary: #3a0ca3;   /* Violet profond */
+    --secondary: #7209b7; /* Violet plus clair */
+    --accent: #4cc9f0;    /* Bleu clair */
+    --light: #f8f9fa;     /* Blanc cassé */
+    --dark: #1a1a2e;      /* Noir bleuté */
+}
+
+/* Style minimaliste mais élégant pour le header */
+header {
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+        url('./Img/logo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Conteneur du contenu */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Logo élégant avec effet de dégradé */
+.logo {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #ffffff, var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 1px;
+    animation: fadeIn 1s ease-out;
+}
+
+.logo span {
+    font-weight: 800;
+    color: var(--accent);
+}
+
+/* Tagline subtile */
+.tagline {
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    opacity: 0.9;
+    animation: fadeIn 1s ease-out 0.3s both;
+}
+
+/* Navigation épurée */
+.nav-links {
+    display: inline-flex;
+    gap: 1.5rem;
+    animation: fadeIn 1s ease-out 0.6s both;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.7rem 1.5rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 50%;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+    header {
+        padding: 3rem 0;
+    }
+    
+    .logo {
+        font-size: 2.5rem;
+    }
+    
+    .tagline {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .nav-links a {
+        padding: 0.6rem 1rem;
+    }
+}
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        section {
+            margin: 4rem 0;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            z-index: 2;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .product-description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        .product-price {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .size-options {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .size-option {
+            padding: 0.3rem 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .size-option:hover, .size-option.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .add-whatsapp{
+            width: 100%;
+            padding: 0.7rem;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .add-whatsapp:hover{
+            background-color: var(--dark);
+            transform: translateY(-2px);
+        }
+        
+        .add-to-cart {
+            width: 100%;
+            padding: 0.7rem;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .add-to-cart:hover {
+            background-color: var(--dark);
+            transform: translateY(-2px);
+        }
+        
+        /* Perfume Section Specific */
+        .perfume-card .product-image {
+            height: 250px;
+        }
+        
+        .perfume-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .perfume-option {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .perfume-option:hover, .perfume-option.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .perfume-option .size {
+            font-weight: 700;
+            display: block;
+        }
+        
+        .perfume-option .price {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Floating Elements */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .floating-element {
+            position: absolute;
+            background-color: rgba(106, 76, 147, 0.1);
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out;
+        }
+        
+        .floating-element:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .floating-element:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            left: 80%;
+            animation-delay: 2s;
+        }
+        
+        .floating-element:nth-child(3) {
+            width: 70px;
+            height: 70px;
+            top: 80%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        .footer-column p, .footer-column a {
+            color: #ccc;
+            margin-bottom: 0.8rem;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        .fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s ease-in forwards;
+}
+
+.custom-alert {
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  text-align: center;
+  max-width: 90%;
+}
+
+/* Fond pour les messages de succès */
+.success {
+  background: linear-gradient(90deg, #28a745, #218838);
+}
+
+/* Fond pour les messages d’erreur */
+.danger {
+  background: linear-gradient(90deg, #dc3545, #bd2130);
+}
+
+/* Style pour le formulaire de commande */
+#checkout-form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 3rem auto;
+    animation: fadeIn 1s ease-out;
+}
+
+#checkout-form label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+#checkout-form input,
+#checkout-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+#checkout-form input:focus,
+#checkout-form textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(106, 76, 147, 0.2);
+}
+
+#checkout-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+#checkout-form button[type="submit"] {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+#checkout-form button[type="submit"]:hover {
+    background-color: var(--dark);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Style pour les messages de validation */
+#checkout-form input:valid,
+#checkout-form textarea:valid {
+    border-left: 3px solid #4CAF50;
+}
+
+#checkout-form input:invalid:not(:placeholder-shown),
+#checkout-form textarea:invalid:not(:placeholder-shown) {
+    border-left: 3px solid #f44336;
+}
+
+/* Style pour la section du panier */
+#panier-visuel {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 3rem auto;
+    animation: fadeIn 1s ease-out;
+}
+
+#panier-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+}
+
+#panier-table th {
+    background-color: var(--primary);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+#panier-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+#panier-table tbody tr:hover {
+    background-color: rgba(106, 76, 147, 0.05);
+}
+
+#panier-table tfoot {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+#panier-table tfoot td {
+    border-top: 2px solid var(--primary);
+    padding: 1.2rem 1rem;
+}
+
+#panier-total {
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+/* Boutons de quantité */
+.qty-btn {
+    background-color: var(--light);
+    border: 1px solid #ddd;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.5rem;
+}
+
+.qty-btn:hover {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.qty-value {
+    min-width: 30px;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Bouton supprimer */
+.remove-btn {
+    color: #e74c3c;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+}
+
+.remove-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Style pour la sélection de quantité */
+.quantite-selection {
+    margin: 1rem 0;
+}
+
+.quantite-selection label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.quantite-btns {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-moins, .btn-plus {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--primary);
+    background-color: white;
+    color: var(--primary);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-moins:hover, .btn-plus:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-moins:active, .btn-plus:active {
+    transform: translateY(0);
+}
+
+.quantite-val {
+    min-width: 30px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+#floating-cart-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    text-decoration: none;
+    display: none; /* caché tant que le panier est vide */
+    align-items: center;
+    gap: 8px;
+}
+
+#floating-cart-icon:hover {
+    transform: scale(1.15);
+    background-color: #ffd700;
+}
+
+#cart-count {
+    background: white;
+    color: var(--primary);
+    border-radius: 50%;
+    padding: 2px 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+#commande {
+    display: none;
+}
+
+/* Conteneur des filtres - Version améliorée */
+.filter-controls {
+    margin: 2.5rem auto; /* centré horizontalement */
+    display: flex; /* plus flexible que inline-flex ici */
+    flex-wrap: wrap;
+    justify-content: center; /* centre les enfants */
+    align-items: center; /* centre verticalement dans la ligne */
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    gap: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Groupe de filtres */
+.filter-group {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Champ de recherche amélioré */
+#search-input {
+    padding: 12px 20px;
+    width: 250px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--dark);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+#search-input::placeholder {
+    color: #666;
+    opacity: 0.8;
+}
+
+/* Selects améliorés */
+#genre-filter, 
+#saison-filter {
+    padding: 12px 45px 12px 20px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--dark);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    min-width: 200px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Flèche customisée - positionnement clair */
+.filter-group::after {
+    content: "▼";
+    font-size: 0.7rem;
+    color: var(--primary);
+    position: absolute;
+    right: 20px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* Interactions */
+#search-input:focus,
+#genre-filter:focus,
+#saison-filter:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(106, 76, 147, 0.2);
+    transform: translateY(-2px);
+}
+
+#search-input:hover,
+#genre-filter:hover,
+#saison-filter:hover {
+    border-color: var(--primary);
+}
+
+/* Options des selects */
+select option {
+    padding: 12px;
+    background: white;
+    color: var(--dark);
+}
+
+/* Badges "Top Vente" et "Nouveau" */
+.filter-badges {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.filter-badge {
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.filter-badge.active {
+    background: var(--accent);
+    color: var(--dark);
+    border-color: var(--accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .filter-controls {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 1.2rem;
+    }
+    
+    .filter-group {
+        width: 100%;
+    }
+    
+    #search-input,
+    #genre-filter,
+    #saison-filter {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Animation pour le changement de valeur */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.quantite-val.changed {
+    animation: pulse 0.3s ease;
+}
+
+/* Version mobile */
+@media (max-width: 480px) {
+    .btn-moins, .btn-plus {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
+    }
+    
+    .quantite-val {
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #panier-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    #panier-table th, 
+    #panier-table td {
+        padding: 0.8rem 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    #checkout-form {
+        padding: 1.5rem;
+        margin: 2rem 1rem;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-10px); }
+}
+
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            }
+            
+            .perfume-options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="alert-container" style="position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 9999;"></div>
+    <!-- Floating background elements -->
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+    
+    <!-- Header -->
+    <header>
+    <!-- Particules flottantes -->
+    <div class="floating-particles" id="particles"></div>
+    
+    <div class="container">
+        <h1 class="logo"></h1>
+        <p class="tagline">Parfums originaux & articles personnalisés pour sublimer votre style</p>
+        
+        <div class="nav-links">
+            <a href="#personnalises">Articles Personnalisés</a>
+            <a href="#parfums">Nos Parfums</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</header>
+    
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Personalized Products Section -->
+        <section id="personnalises">
+            <div class="section-title">
+                <h2>Articles Personnalisés</h2>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Hoodie -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="./Img/hoodies.jpeg" alt="Hoodie personnalisé">
+                        <span class="product-badge">Populaire</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Hoodie Personnalisé</h3>
+                        <p class="product-description">Hoodie de haute qualité avec impression personnalisée. Disponible en plusieurs couleurs.</p>
+                        <div class="size-options">
+                            <span class="size-option">S</span>
+                            <span class="size-option">M</span>
+                            <span class="size-option active">L</span>
+                            <span class="size-option">XL</span>
+                            <span class="size-option">XXL</span>
+                        </div>
+                        <p class="product-price">Consulter le prix</p>
+                        <button class="add-whatsapp"><i class="fas fa-shopping-cart"></i> Personnaliser</button>
+                    </div>
+                </div>
+                
+                <!-- T-Shirt -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="./Img/tshirt.png" alt="T-Shirt personnalisé">
+                        <span class="product-badge">Populaire</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">T-Shirt Personnalisé</h3>
+                        <p class="product-description">T-Shirt 100% coton avec votre design unique. Résistant aux lavages.</p>
+                        <div class="size-options">
+                            <span class="size-option">XS</span>
+                            <span class="size-option active">S</span>
+                            <span class="size-option">M</span>
+                            <span class="size-option">L</span>
+                            <span class="size-option">XL</span>
+                        </div>
+                        <p class="product-price">Consulter le prix</p>
+                        <button class="add-whatsapp"><i class="fas fa-shopping-cart"></i> Personnaliser</button>
+                    </div>
+                </div>
+                
+                <!-- Assiettes -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="./Img/assiette.png" alt="Assiette personnalisée">
+                        <span class="product-badge">Nouveau</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Assiette Personnalisée</h3>
+                        <p class="product-description">Assiette céramique avec impression durable. Parfait pour un cadeau unique.</p>
+                        <div class="size-options">
+                            <span class="size-option active">20cm</span>
+                            <span class="size-option">25cm</span>
+                            <span class="size-option">30cm</span>
+                        </div>
+                        <p class="product-price">Consulter le prix</p>
+                        <button class="add-whatsapp"><i class="fas fa-shopping-cart"></i> Personnaliser</button>
+                    </div>
+                </div>
+                
+                <!-- Tasse -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://kalmaz.ma/cdn/shop/files/Mugporcelaine-03_1200x1200_crop_center.jpg?v=1712275808" alt="Tasse personnalisée">
+                        <span class="product-badge">Nouveau</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Tasse Personnalisée</h3>
+                        <p class="product-description">Tasse en céramique de haute qualité avec votre design. Résiste aux micro-ondes.</p>
+                        <div class="size-options">
+                            <span class="size-option active">30cl</span>
+                            <span class="size-option">40cl</span>
+                        </div>
+                        <p class="product-price">Consulter le prix</p>
+                        <button class="add-whatsapp"><i class="fas fa-shopping-cart"></i> Personnaliser</button>
+                    </div>
+                </div>
+                
+                <!-- Stickers -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://static.tadaaz.be/api/2/img/tadprod/TA03905-2400001-02/sticker-transparent-personnalise-8-x-2-5-cm-TA03905-2400001-02-1.jpg/resize?size=599&auth=MjIwNzUzNzIxMg__" alt="Stickers personnalisés">
+                        <span class="product-badge">Top Vente</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Stickers Personnalisés</h3>
+                        <p class="product-description">Lot de 10 stickers haute qualité avec votre design. Résistants à l'eau et aux UV.</p>
+                        <div class="size-options">
+                            <span class="size-option active">5x5cm</span>
+                            <span class="size-option">10x10cm</span>
+                            <span class="size-option">15x15cm</span>
+                        </div>
+                        <p class="product-price">Consulter le prix</p>
+                        <button class="add-whatsapp"><i class="fas fa-shopping-cart"></i> Personnaliser</button>
+                    </div>
+                </div>
+
+                <!-- Casquettes -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="./Img/casquette.png" alt="Stickers personnalisés">
+                        <span class="product-badge">Top Vente</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Casquettes Personnalisées</h3>
+                        <p class="product-description">Casquette de haute qualité avec votre design personnalisé.</p>
+                        <div class="size-options">
+                            <span class="size-option active">5x5cm</span>
+                            <span class="size-option">10x10cm</span>
+                            <span class="size-option">15x15cm</span>
+                        </div>
+                        <p class="product-price">Consulter le prix</p>
+                        <button class="add-whatsapp"><i class="fas fa-shopping-cart"></i> Personnaliser</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Perfumes Section -->
+        <section id="parfums">
+            <div class="section-title">
+                <h2>Nos Parfums Originaux</h2>
+            </div>
+
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <input type="text" id="search-input" placeholder="Rechercher un parfum...">
+                </div>
+                
+                <div class="filter-group">
+                    <select id="genre-filter">
+                        <option value="">Tous les genres</option>
+                        <option value="homme">Parfum Homme</option>
+                        <option value="femme">Parfum Femme</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <select id="saison-filter">
+                        <option value="">Toutes les saisons</option>
+                        <option value="hiver">Hiver</option>
+                        <option value="été">Été</option>
+                        <option value="automne">Automne</option>
+                    </select>
+                </div>
+            </div>
+            
+            
+            <div class="products-grid">
+                <!-- Parfum 13 -->
+                <div class="product-card perfume-card" data-genre="homme" data-saison="été">
+                    <div class="product-image">
+                        <img src="./Img/absolutely.jpg" alt="Bois Mystique">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">STRONGER WITH YOU ABSOLUTELY</h3>
+                        
+                        <div class="perfume-options">
+                            <div class="perfume-option">
+                                <span class="size">5ML</span>
+                                <span class="price">69,00 DH</span>
+                            </div>
+                            <div class="perfume-option active">
+                                <span class="size">10ML</span>
+                                <span class="price">119,00 DH</span>
+                            </div>
+                            <div class="perfume-option">
+                                <span class="size">50ML</span>
+                                <span class="price">499,00 DH</span>
+                            </div>
+                        </div>
+
+                        <div class="quantite-selection">
+                            <label>Quantité :</label>
+                            <div class="quantite-btns" style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+                                <button class="btn-moins">−</button>
+                                <span class="quantite-val">1</span>
+                                <button class="btn-plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Parfum 2 -->
+                <div class="product-card perfume-card" data-genre="homme" data-saison="hiver">
+                    <div class="product-image">
+                        <img src="./Img/elexir.webp" alt="Jardin Secret">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">JEAN PAUL GAULTIER - LE MALE ELIXIR EDP</h3>
+                        
+                        <div class="perfume-options">
+                            <div class="perfume-option">
+                                <span class="size">5ML</span>
+                                <span class="price">79,00 DH</span>
+                            </div>
+                            <div class="perfume-option active">
+                                <span class="size">10ML</span>
+                                <span class="price">139,00 DH</span>
+                            </div>
+                            <div class="perfume-option">
+                                <span class="size">50ML</span>
+                                <span class="price">499,00 DH</span>
+                            </div>
+                        </div>
+
+                        <div class="quantite-selection">
+                            <label>Quantité :</label>
+                            <div class="quantite-btns" style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+                                <button class="btn-moins">−</button>
+                                <span class="quantite-val">1</span>
+                                <button class="btn-plus">+</button>
+                            </div>
+                        </div>
+
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Parfum 3 -->
+                <div class="product-card perfume-card" data-genre="homme" data-saison="été">
+                    <div class="product-image">
+                        <img src="./Img/le beau le parfum.webp" alt="Océan Infini">
+                        <span class="product-badge">Nouveau</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">JEAN PAUL GAULTIER - LE BEAU LE PARFUM</h3>
+                        
+                        <div class="perfume-options">
+                            <div class="perfume-option">
+                                <span class="size">5ML</span>
+                                <span class="price">69,00 DH</span>
+                            </div>
+                            <div class="perfume-option active">
+                                <span class="size">10ML</span>
+                                <span class="price">119,00 DH</span>
+                            </div>
+                            <div class="perfume-option">
+                                <span class="size">50ML</span>
+                                <span class="price">499,00 DH</span>
+                            </div>
+                        </div>
+
+                        <div class="quantite-selection">
+                            <label>Quantité :</label>
+                            <div class="quantite-btns" style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+                                <button class="btn-moins">−</button>
+                                <span class="quantite-val">1</span>
+                                <button class="btn-plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Parfum 4 -->
+                <div class="product-card perfume-card" data-genre="homme" data-saison="été">
+                    <div class="product-image">
+                        <img src="./Img/versace.webp" alt="Bois Mystique">
+                        <span class="product-badge">Top Vente</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Versace Eros Men</h3>
+                        
+                        <div class="perfume-options">
+                            <div class="perfume-option">
+                                <span class="size">5ML</span>
+                                <span class="price">59,00 DH</span>
+                            </div>
+                            <div class="perfume-option active">
+                                <span class="size">10ML</span>
+                                <span class="price">99,00 DH</span>
+                            </div>
+                            <div class="perfume-option">
+                                <span class="size">50ML</span>
+                                <span class="price">449,00 DH</span>
+                            </div>
+                        </div>
+
+                        <div class="quantite-selection">
+                            <label>Quantité :</label>
+                            <div class="quantite-btns" style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+                                <button class="btn-moins">−</button>
+                                <span class="quantite-val">1</span>
+                                <button class="btn-plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Parfum 5 -->
+                <div class="product-card perfume-card" data-genre="homme" data-saison="hiver">
+                    <div class="product-image">
+                        <img src="./Img/onemillion.webp" alt="Bois Mystique">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">One Million Gold</h3>
+                        
+                        <div class="perfume-options">
+                            <div class="perfume-option">
+                                <span class="size">5ML</span>
+                                <span class="price">59,00 DH</span>
+                            </div>
+                            <div class="perfume-option active">
+                                <span class="size">10ML</span>
+                                <span class="price">89,00 DH</span>
+                            </div>
+                            <div class="perfume-option">
+                                <span class="size">50ML</span>
+                                <span class="price">399,00 DH</span>
+                            </div>
+                        </div>
+
+                        <div class="quantite-selection">
+                            <label>Quantité :</label>
+                            <div class="quantite-btns" style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+                                <button class="btn-moins">−</button>
+                                <span class="quantite-val">1</span>
+                                <button class="btn-plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+
+                   <!-- Parfum 6 -->
+                <div class="product-card perfume-card" data-genre="femme" data-saison="été">
+                    <div class="product-image">
+                        <img src="./Img/impératrice.webp" alt="Bois Mystique">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Dolce&Gabbana - L'Impératrice</h3>
+                        
+                        <div class="perfume-options">
+                            <div class="perfume-option">
+                                <span class="size">5ML</span>
+                                <span class="price">59,00 DH</span>
+                            </div>
+                            <div class="perfume-option active">
+                                <span class="size">10ML</span>
+                                <span class="price">95,00 DH</span>
+                            </div>
+                            <div class="perfume-option">
+                                <span class="size">50ML</span>
+                                <span class="price">359,00 DH</span>
+                            </div>
+                        </div>
+
+                        <div class="quantite-selection">
+                            <label>Quantité :</label>
+                            <div class="quantite-btns" style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+                                <button class="btn-moins">−</button>
+                                <span class="quantite-val">1</span>
+                                <button class="btn-plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Parfum 7 -->
+                <div class="product-card perfume-card" data-genre="homme" data-saison="automne">
+                    <div class="product-image">
+                        <img src="./Img/scandal.jpg" alt="Bois Mystique">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">JEAN PAUL GAULTIER - SCANDAL</h3>
+                        
+                        <div class="perfume-options">
+                            <div class="perfume-option">
+                                <span class="size">5ML</span>
+                                <span class="price">69,00 DH</span>
+                            </div>
+                            <div class="perfume-option active">
+                                <span class="size">10ML</span>
+                                <span class="price">109,00 DH</span>
+                            </div>
+                            <div class="perfume-option">
+                                <span class="size">50ML</span>
+                                <span class="price">499,00 DH</span>
+                            </div>
+                        </div>
+
+                        <div class="quantite-selection">
+                            <label>Quantité :</label>
+                            <div class="quantite-btns" style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+                                <button class="btn-moins">−</button>
+                                <span class="quantite-val">1</span>
+                                <button class="btn-plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+
+                
+
+                <!-- Parfum 9 -->
+                <div class="product-card perfume-card" data-genre="homme" data-saison="automne">
+                    <div class="product-image">
+                        <img src="./Img/ysl.jpg" alt="Bois Mystique">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Yves Saint Laurent</h3>
+                        
+                        <div class="perfume-options">
+                            <div class="perfume-option">
+                                <span class="size">5ML</span>
+                                <span class="price">79,00 DH</span>
+                            </div>
+                            <div class="perfume-option active">
+                                <span class="size">10ML</span>
+                                <span class="price">119,00 DH</span>
+                            </div>
+                            <div class="perfume-option">
+                                <span class="size">50ML</span>
+                                <span class="price">549,00 DH</span>
+                            </div>
+                        </div>
+
+                        <div class="quantite-selection">
+                            <label>Quantité :</label>
+                            <div class="quantite-btns" style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+                                <button class="btn-moins">−</button>
+                                <span class="quantite-val">1</span>
+                                <button class="btn-plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Parfum 10 -->
+                <div class="product-card perfume-card" data-genre="homme" data-saison="hiver">
+                    <div class="product-image">
+                        <img src="./Img/ombré.jpeg" alt="Bois Mystique">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">TOM FORD Ombré Leather</h3>
+                        
+                        <div class="perfume-options">
+                            <div class="perfume-option">
+                                <span class="size">5ML</span>
+                                <span class="price">119,00 DH</span>
+                            </div>
+                            <div class="perfume-option active">
+                                <span class="size">10ML</span>
+                                <span class="price">199,00 DH</span>
+                            </div>
+                            <div class="perfume-option">
+                                <span class="size">50ML</span>
+                                <span class="price">799,00 DH</span>
+                            </div>
+                        </div>
+
+                        <div class="quantite-selection">
+                            <label>Quantité :</label>
+                            <div class="quantite-btns" style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+                                <button class="btn-moins">−</button>
+                                <span class="quantite-val">1</span>
+                                <button class="btn-plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Parfum 11 -->
+                <div class="product-card perfume-card" data-genre="homme" data-saison="été">
+                    <div class="product-image">
+                        <img src="./Img/cool water.jpg" alt="Bois Mystique">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Davidoff Cool Water</h3>
+                        
+                        <div class="perfume-options">
+                            <div class="perfume-option">
+                                <span class="size">5ML</span>
+                                <span class="price">39,00 DH</span>
+                            </div>
+                            <div class="perfume-option active">
+                                <span class="size">10ML</span>
+                                <span class="price">75,00 DH</span>
+                            </div>
+                            <div class="perfume-option">
+                                <span class="size">50ML</span>
+                                <span class="price">249,00 DH</span>
+                            </div>
+                        </div>
+
+                        <div class="quantite-selection">
+                            <label>Quantité :</label>
+                            <div class="quantite-btns" style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+                                <button class="btn-moins">−</button>
+                                <span class="quantite-val">1</span>
+                                <button class="btn-plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Parfum 1 -->
+                <div class="product-card perfume-card" data-genre="homme" data-saison="automne">
+                    <div class="product-image">
+                        <img src="./Img/9pm.webp" alt="Élixir Nocturne">
+                        <span class="product-badge">Top Vente</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Afnan - 9 PM</h3>
+                        
+                        <div class="perfume-options">
+                            <div class="perfume-option">
+                                <span class="size">5ML</span>
+                                <span class="price">49,00 DH</span>
+                            </div>
+                            <div class="perfume-option active">
+                                <span class="size">10ML</span>
+                                <span class="price">89,00 DH</span>
+                            </div>
+                            <div class="perfume-option">
+                                <span class="size">50ML</span>
+                                <span class="price">249,00 DH</span>
+                            </div>
+                        </div>
+                        
+                        <div class="quantite-selection">
+                            <label>Quantité :</label>
+                            <div class="quantite-btns" style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+                                <button class="btn-moins">−</button>
+                                <span class="quantite-val">1</span>
+                                <button class="btn-plus">+</button>
+                            </div>
+                        </div>
+
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+                
+
+                <!-- Parfum 16 -->
+                <div class="product-card perfume-card" data-genre="homme" data-saison="été">
+                    <div class="product-image">
+                        <img src="./Img/armani.jpeg" alt="Bois Mystique">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Armani Acqua Di Giò</h3>
+                        
+                        <div class="perfume-options">
+                            <div class="perfume-option">
+                                <span class="size">5ML</span>
+                                <span class="price">69,00 DH</span>
+                            </div>
+                            <div class="perfume-option active">
+                                <span class="size">10ML</span>
+                                <span class="price">109,00 DH</span>
+                            </div>
+                            <div class="perfume-option">
+                                <span class="size">50ML</span>
+                                <span class="price">399,00 DH</span>
+                            </div>
+                        </div>
+
+                        <div class="quantite-selection">
+                            <label>Quantité :</label>
+                            <div class="quantite-btns" style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+                                <button class="btn-moins">−</button>
+                                <span class="quantite-val">1</span>
+                                <button class="btn-plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Parfum 19 -->
+                <div class="product-card perfume-card" data-genre="homme" data-saison="automne">
+                    <div class="product-image">
+                        <img src="./Img/le mal le parfum.jpeg" alt="Bois Mystique">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">JEAN PAUL GAULTIER - LE MALE LE PARFUM </h3>
+                        
+                        <div class="perfume-options">
+                            <div class="perfume-option">
+                                <span class="size">5ML</span>
+                                <span class="price">69,00 DH</span>
+                            </div>
+                            <div class="perfume-option active">
+                                <span class="size">10ML</span>
+                                <span class="price">119,00 DH</span>
+                            </div>
+                            <div class="perfume-option">
+                                <span class="size">50ML</span>
+                                <span class="price">499,00 DH</span>
+                            </div>
+                        </div>
+
+                        <div class="quantite-selection">
+                            <label>Quantité :</label>
+                            <div class="quantite-btns" style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+                                <button class="btn-moins">−</button>
+                                <span class="quantite-val">1</span>
+                                <button class="btn-plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Parfum 21 -->
+                <div class="product-card perfume-card" data-genre="femme" data-saison="été">
+                    <div class="product-image">
+                        <img src="./Img/la belle.jpg" alt="Bois Mystique">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">JEAN PAUL GAULTIER - LA BELLE LE PARFUM </h3>
+                        
+                        <div class="perfume-options">
+                            <div class="perfume-option">
+                                <span class="size">5ML</span>
+                                <span class="price">69,00 DH</span>
+                            </div>
+                            <div class="perfume-option active">
+                                <span class="size">10ML</span>
+                                <span class="price">109,00 DH</span>
+                            </div>
+                            <div class="perfume-option">
+                                <span class="size">50ML</span>
+                                <span class="price">459,00 DH</span>
+                            </div>
+                        </div>
+
+                        <div class="quantite-selection">
+                            <label>Quantité :</label>
+                            <div class="quantite-btns" style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+                                <button class="btn-moins">−</button>
+                                <span class="quantite-val">1</span>
+                                <button class="btn-plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Parfum 8 -->
+                <div class="product-card perfume-card" data-genre="homme" data-saison="été">
+                    <div class="product-image">
+                        <img src="./Img/narciso.webp" alt="Bois Mystique">
+                        <span class="product-badge">Nouveau</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">NARCISO RODRIGUEZ FOR HIM BLEU NOIR</h3>
+                        
+                        <div class="perfume-options">
+                            <div class="perfume-option">
+                                <span class="size">5ML</span>
+                                <span class="price">79,00 DH</span>
+                            </div>
+                            <div class="perfume-option active">
+                                <span class="size">10ML</span>
+                                <span class="price">129,00 DH</span>
+                            </div>
+                            <div class="perfume-option">
+                                <span class="size">50ML</span>
+                                <span class="price">499,00 DH</span>
+                            </div>
+                        </div>
+
+                        <div class="quantite-selection">
+                            <label>Quantité :</label>
+                            <div class="quantite-btns" style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+                                <button class="btn-moins">−</button>
+                                <span class="quantite-val">1</span>
+                                <button class="btn-plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Parfum 17 -->
+                <div class="product-card perfume-card" data-genre="homme" data-saison="été">
+                    <div class="product-image">
+                        <img src="./Img/light blue.webp" alt="Bois Mystique">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">DOLCE & GABBANA LIGHT BLUE</h3>
+                        
+                        <div class="perfume-options">
+                            <div class="perfume-option">
+                                <span class="size">5ML</span>
+                                <span class="price">59,00 DH</span>
+                            </div>
+                            <div class="perfume-option active">
+                                <span class="size">10ML</span>
+                                <span class="price">109,00 DH</span>
+                            </div>
+                            <div class="perfume-option">
+                                <span class="size">50ML</span>
+                                <span class="price">389,00 DH</span>
+                            </div>
+                        </div>
+
+                        <div class="quantite-selection">
+                            <label>Quantité :</label>
+                            <div class="quantite-btns" style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+                                <button class="btn-moins">−</button>
+                                <span class="quantite-val">1</span>
+                                <button class="btn-plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Parfum 18 -->
+                <div class="product-card perfume-card" data-genre="homme" data-saison="hiver">
+                    <div class="product-image">
+                        <img src="./Img/ultramal.jpg" alt="Bois Mystique">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Ultra Male</h3>
+                        
+                        <div class="perfume-options">
+                            <div class="perfume-option">
+                                <span class="size">5ML</span>
+                                <span class="price">89,00 DH</span>
+                            </div>
+                            <div class="perfume-option active">
+                                <span class="size">10ML</span>
+                                <span class="price">139,00 DH</span>
+                            </div>
+                            <div class="perfume-option">
+                                <span class="size">50ML</span>
+                                <span class="price">499,00 DH</span>
+                            </div>
+                        </div>
+
+                        <div class="quantite-selection">
+                            <label>Quantité :</label>
+                            <div class="quantite-btns" style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+                                <button class="btn-moins">−</button>
+                                <span class="quantite-val">1</span>
+                                <button class="btn-plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+
+                
+
+                
+
+                
+
+                <!-- Parfum 23 -->
+                <div class="product-card perfume-card" data-genre="femme" data-saison="hiver">
+                    <div class="product-image">
+                        <img src="./Img/dior miss.webp" alt="Bois Mystique">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">DIOR MISS</h3>
+                        
+                        <div class="perfume-options">
+                            <div class="perfume-option">
+                                <span class="size">5ML</span>
+                                <span class="price">79,00 DH</span>
+                            </div>
+                            <div class="perfume-option active">
+                                <span class="size">10ML</span>
+                                <span class="price">119,00 DH</span>
+                            </div>
+                            <div class="perfume-option">
+                                <span class="size">50ML</span>
+                                <span class="price">599,00 DH</span>
+                            </div>
+                        </div>
+
+                        <div class="quantite-selection">
+                            <label>Quantité :</label>
+                            <div class="quantite-btns" style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+                                <button class="btn-moins">−</button>
+                                <span class="quantite-val">1</span>
+                                <button class="btn-plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+
+
+                
+
+                
+                <!-- Parfum 24 -->
+                <div class="product-card perfume-card" data-genre="femme" data-saison="automne">
+                    <div class="product-image">
+                        <img src="./Img/paradoxe.webp" alt="Bois Mystique">
+                        <span class="product-badge">Top Vente</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Prada Paradoxe</h3>
+                        
+                        <div class="perfume-options">
+                            <div class="perfume-option">
+                                <span class="size">5ML</span>
+                                <span class="price">89,00 DH</span>
+                            </div>
+                            <div class="perfume-option active">
+                                <span class="size">10ML</span>
+                                <span class="price">169,00 DH</span>
+                            </div>
+                            <div class="perfume-option">
+                                <span class="size">50ML</span>
+                                <span class="price">599,00 DH</span>
+                            </div>
+                        </div>
+
+                        <div class="quantite-selection">
+                            <label>Quantité :</label>
+                            <div class="quantite-btns" style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+                                <button class="btn-moins">−</button>
+                                <span class="quantite-val">1</span>
+                                <button class="btn-plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section id="panier-visuel">
+            <div class="section-title">
+                <h2>🛍️ Mon panier</h2>
+            </div>
+            <table id="panier-table" style="width: 100%; text-align: center; border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th>Produit</th>
+                        <th>Volume</th>
+                        <th>Quantité</th>
+                        <th>Prix</th>
+                        <th>Sous-total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5"><strong>Total</strong></td>
+                        <td id="panier-total"><strong>0 MAD</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="commande">
+            <div class="section-title">
+                <h2>Finaliser ma commande</h2>
+            </div>
+
+            <form id="checkout-form" action="https://formspree.io/f/myzjzprg" method="POST" style="max-width: 500px; margin: auto;">
+            <input type="hidden" name="produits_selectionnes" id="produits-cache">
+
+            <label for="nom">Nom complet :</label>
+            <input type="text" name="nom_complet" id="nom" required>
+
+            <label for="ville">Ville :</label>
+            <input type="text" name="ville" id="ville" required>
+
+            <label for="adresse">Adresse complète :</label>
+            <textarea name="adresse_complete" id="adresse" required></textarea>
+
+            <label for="tel">Téléphone :</label>
+            <input type="tel" name="telephone" id="tel" required>
+
+            <button type="submit" style="margin-top: 1rem;">Envoyer la commande</button>
+        </form>
+
+        </section>
+
+        <a id="floating-cart-icon" href="#panier-visuel" title="Voir le panier">
+    🛒 <span id="cart-count">0</span>
+</a>
+
+
+
+    </main>
+    
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>SwagScent</h3>
+                <p>Vendeurs de parfums originaux et créateurs d'articles personnalisés pour sublimer votre quotidien.</p>
+                <p>Chaque création est conçue avec passion pour vous offrir une expérience sensorielle unique.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 45, avenue Tareq Ibn Ziyad, Kénitra</p>
+                <p><i class="fas fa-phone"></i> +212 660 792 111</p>
+                <p><i class="fas fa-envelope"></i> swagscentofficial@gmail.com</p>
+                
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/19gzFASMDW/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/swagscent?igsh=MTdnd3k3aTkxajhtYQ=="><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/+212669411333?text=Bonjour"><i class="fab fa-whatsapp"></i></a>
+                    <a href="http://www.tiktok.com/@swagscent"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Informations</h3>
+                <a href="#">Livraison & Retours</a>
+                <a href="#">Politique de confidentialité</a>
+                <a href="#">Conditions générales</a>
+                <a href="#">FAQ</a>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>
+                &copy; 2025 SwagScent. Tous droits réservés.<br>
+                <strong>Développé par :
+                    <a href="https://wa.me/+212664878604?text=Bonjour, je veux un devis pour créer un Site Web de " target="_blank" style="color: inherit; text-decoration: underline;">
+                        Louchi Amine
+                    </a>
+                </strong>
+            </p>
+        </div>
+
+    </footer>
+    
+    <script>
+        // Animation au scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sélectionner toutes les cartes de produits
+            const productCards = document.querySelectorAll('.product-card');
+            
+            // Options pour l'observateur d'intersection
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            // Callback pour l'observateur
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeIn 0.8s ease-out forwards';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+            
+            // Créer l'observateur
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+            
+            // Observer chaque carte de produit
+            productCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                observer.observe(card);
+                
+                // Ajouter un délai progressif pour un effet en cascade
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+            
+            // Gestion des options de taille
+            const sizeOptions = document.querySelectorAll('.size-option');
+            sizeOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    this.parentElement.querySelector('.active').classList.remove('active');
+                    this.classList.add('active');
+                });
+            });
+            
+            // Gestion des options de parfum
+            const perfumeOptions = document.querySelectorAll('.perfume-option');
+            perfumeOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    this.parentElement.querySelector('.active').classList.remove('active');
+                    this.classList.add('active');
+                });
+            });
+            
+            // Animation au survol des boutons
+            const buttons = document.querySelectorAll('button, a');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px)';
+                    this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                    this.style.boxShadow = '';
+                });
+            });
+            
+            // Smooth scrolling pour les liens de navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+
+    </script>
+    <script>
+    function showAlert(message, type = 'success') {
+        const container = document.getElementById('alert-container');
+        const alert = document.createElement('div');
+        alert.className = `custom-alert fade-in ${type}`;
+        alert.style.minWidth = "300px";
+        alert.role = "alert";
+        alert.innerText = message;
+
+        container.appendChild(alert);
+
+        setTimeout(() => {
+            alert.classList.remove('fade-in');
+            alert.classList.add('fade-out');
+        }, 2000);
+
+        setTimeout(() => {
+            alert.remove();
+        }, 2500);
+    }
+
+    function afficherPanier() {
+    const sectionPanier = document.getElementById("panier-visuel");
+    const sectionCommande = document.getElementById("commande");
+    const panierTable = document.querySelector("#panier-table tbody");
+    const totalCell = document.getElementById("panier-total");
+    const panierLocal = JSON.parse(localStorage.getItem("panier")) || [];
+
+    if (panierLocal.length === 0) {
+        sectionPanier.style.display = "none";
+        if (sectionCommande) sectionCommande.style.display = "none";
+        return;
+    } else {
+        sectionPanier.style.display = "block";
+        if (sectionCommande) sectionCommande.style.display = "block";
+    }
+
+    panierTable.innerHTML = "";
+    let total = 0;
+
+    panierLocal.forEach((item, index) => {
+        const prix = getPrixProduit(item.taille);
+        const quantite = item.quantite || 1;
+        const sousTotal = prix * quantite;
+        total += sousTotal;
+
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${item.nom}</td>
+            <td>${item.taille}</td>
+            <td>
+                <div class="quantite-btns">
+                    <button class="btn-qty btn-moins" data-index="${index}">−</button>
+                    <span class="quantite-val qty-val" data-index="${index}">${quantite}</span>
+                    <button class="btn-qty btn-plus" data-index="${index}">+</button>
+                </div>
+            </td>
+            <td>${prix} MAD</td>
+            <td>${sousTotal} MAD</td>
+            <td><button class="btn-supprimer" data-index="${index}" style="background: transparent; border: none; color: red; font-size: 1.2rem; cursor: pointer;">🗑️</button></td>
+        `;
+
+        // Ajouter les écouteurs de quantité
+        row.querySelector('.btn-plus')?.addEventListener('click', () => {
+            panierLocal[index].quantite += 1;
+            localStorage.setItem("panier", JSON.stringify(panierLocal));
+            afficherPanier();
+        });
+
+        row.querySelector('.btn-moins')?.addEventListener('click', () => {
+            if (panierLocal[index].quantite > 1) {
+                panierLocal[index].quantite -= 1;
+                localStorage.setItem("panier", JSON.stringify(panierLocal));
+                afficherPanier();
+            }
+        });
+
+        // Ajouter le bouton supprimer
+        row.querySelector('.btn-supprimer')?.addEventListener('click', () => {
+            panierLocal.splice(index, 1);
+            localStorage.setItem("panier", JSON.stringify(panierLocal));
+            afficherPanier();
+            showAlert("🗑️ Article supprimé du panier.");
+        });
+
+        panierTable.appendChild(row);
+    });
+
+    totalCell.innerHTML = `<strong>${total} MAD</strong>`;
+
+    // Mettre à jour l'icône flottante
+    const floatingIcon = document.getElementById("floating-cart-icon");
+    const cartCount = document.getElementById("cart-count");
+
+    if (panierLocal.length > 0) {
+        const totalItems = panierLocal.reduce((sum, item) => sum + (item.quantite || 1), 0);
+        cartCount.textContent = totalItems;
+        floatingIcon.style.display = "flex";
+    } else {
+        floatingIcon.style.display = "none";
+    }
+}
+
+
+    function afficherIconePanier() {
+        const icone = document.getElementById("floating-cart-icon");
+        icone.style.display = "block";
+    }
+
+
+    function getPrixProduit(taille) {
+        switch (taille) {
+            case "5ML": return 30;
+            case "10ML": return 50;
+            case "50ML": return 120;
+            case "100ML": return 200;
+            default: return 80;
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // ✅ Vider le panier à chaque rechargement
+        localStorage.removeItem("panier");
+
+        if (sessionStorage.getItem("commande_envoyee")) {
+            showAlert("🛒 Commande envoyée avec succès !");
+            sessionStorage.removeItem("commande_envoyee");
+        }
+
+        document.querySelectorAll('.product-card').forEach(card => {
+            let quantite = 1;
+            const val = card.querySelector('.quantite-val');
+            const plusBtn = card.querySelector('.btn-plus');
+            const moinsBtn = card.querySelector('.btn-moins');
+
+            if (val && plusBtn && moinsBtn) {
+                plusBtn.addEventListener('click', () => {
+                    quantite++;
+                    val.textContent = quantite;
+                });
+
+                moinsBtn.addEventListener('click', () => {
+                    if (quantite > 1) {
+                        quantite--;
+                        val.textContent = quantite;
+                    }
+                });
+            }
+
+            const addButton = card.querySelector('.add-to-cart');
+            if (addButton) {
+                addButton.addEventListener('click', () => {
+                    const productName = card.querySelector('.product-title')?.textContent.trim();
+                    const activeSize = card.querySelector('.size-option.active, .perfume-option.active .size')?.textContent.trim();
+                    const prixText = card.querySelector('.perfume-option.active .price')?.textContent.replace(",", ".").replace(" DH", "").trim();
+                    const prix = parseFloat(prixText);
+                    const qty = parseInt(card.querySelector('.quantite-val')?.textContent) || 1;
+
+                    if (productName && activeSize && !isNaN(prix)) {
+                        const panier = JSON.parse(localStorage.getItem("panier")) || [];
+                        panier.push({ nom: productName, taille: activeSize, quantite: qty, prix: prix });
+                        localStorage.setItem('panier', JSON.stringify(panier));
+                        afficherPanier();
+                        afficherIconePanier(); 
+                        showAlert(`✅ "${productName}" (${activeSize}) x${qty} ajouté au panier !`);
+                    } else {
+                        showAlert("❌ Erreur : Veuillez choisir le volume (ML).", "danger");
+                    }
+                });
+            }
+        });
+        afficherPanier();
+
+        const form = document.getElementById("checkout-form");
+        if (form) {
+            form.addEventListener("submit", function (e) {
+                const champProduits = document.getElementById("produits-cache");
+                const panierLocal = JSON.parse(localStorage.getItem("panier")) || [];
+
+                if (panierLocal.length === 0) {
+                    e.preventDefault();
+                    showAlert("❌ Votre panier est vide.", "danger");
+                    return;
+                }
+
+                const texte = panierLocal.map(item => `• ${item.nom} (${item.taille}) x${item.quantite}`).join("\n");
+                champProduits.value = texte;
+
+                sessionStorage.setItem("commande_envoyee", "1");
+                localStorage.removeItem("panier");
+
+                // ✅ NE PAS réinitialiser ici — attendre que le formulaire soit envoyé
+                setTimeout(() => {
+                    form.reset();
+                }, 2000);
+            });
+        }
+
+        document.querySelectorAll('.add-whatsapp').forEach(button => {
+            button.addEventListener('click', function () {
+                const card = this.closest('.product-card');
+                const productName = card.querySelector('.product-title')?.textContent.trim();
+
+                const message = encodeURIComponent(
+                    `Bonjour, je suis intéressé(e) par une impression personnalisée : ${productName}.`
+                );
+
+                const numero = "212669411333";
+                const url = `https://wa.me/${numero}?text=${message}`;
+
+                window.open(url, "_blank");
+            });
+        });
+    });
+</script>
+
+<script>
+    // Génération des particules
+document.addEventListener('DOMContentLoaded', function() {
+    const particlesContainer = document.getElementById('particles');
+    const particleCount = 30;
+    
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // Position aléatoire
+        const posX = Math.random() * 100;
+        const posY = Math.random() * 100 + 100; // Commence en bas
+        
+        // Taille aléatoire entre 2px et 5px
+        const size = Math.random() * 3 + 2;
+        
+        // Durée d'animation aléatoire entre 10s et 20s
+        const duration = Math.random() * 10 + 10;
+        
+        // Délai aléatoire
+        const delay = Math.random() * -20;
+        
+        particle.style.left = `${posX}%`;
+        particle.style.bottom = `-${size}px`;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.animationDuration = `${duration}s`;
+        particle.style.animationDelay = `${delay}s`;
+        
+        // Opacité aléatoire
+        particle.style.opacity = Math.random() * 0.5 + 0.1;
+        
+        particlesContainer.appendChild(particle);
+    }
+});
+</script>
+
+<!--TRI et SELECT-->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const searchInput = document.getElementById("search-input");
+    const genreFilter = document.getElementById("genre-filter");
+    const saisonFilter = document.getElementById("saison-filter");
+    const cards = document.querySelectorAll(".perfume-card");
+
+    function filterCards() {
+        const searchText = searchInput.value.toLowerCase();
+        const genre = genreFilter.value;
+        const saison = saisonFilter.value;
+
+        cards.forEach(card => {
+            const title = card.querySelector(".product-title").textContent.toLowerCase();
+            const g = card.dataset.genre;
+            const s = card.dataset.saison;
+
+            const matchText = title.includes(searchText);
+            const matchGenre = genre === "" || g === genre;
+            const matchSaison = saison === "" || s === saison;
+
+            if (matchText && matchGenre && matchSaison) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    }
+
+    searchInput.addEventListener("input", filterCards);
+    genreFilter.addEventListener("change", filterCards);
+    saisonFilter.addEventListener("change", filterCards);
+});
+</script>
+
+
+</body>
+</html>
