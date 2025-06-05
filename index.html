@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #6a4c93;
+            --primary: #5d3b8d;
             --secondary: #8a5a44;
             --accent: #f8c537;
             --light: #f9f5ff;
@@ -46,14 +46,7 @@
         }
         
         /* Header */
-/* Variables couleurs modernes */
-:root {
-    --primary: #3a0ca3;   /* Violet profond */
-    --secondary: #7209b7; /* Violet plus clair */
-    --accent: #4cc9f0;    /* Bleu clair */
-    --light: #f8f9fa;     /* Blanc cassé */
-    --dark: #1a1a2e;      /* Noir bleuté */
-}
+
 
 /* Style minimaliste mais élégant pour le header */
 header {
@@ -832,6 +825,7 @@ header {
     background-color: rgba(255, 255, 255, 0.9);
     color: var(--dark);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding-left: 50px;
 }
 
 #search-input::placeholder {
@@ -916,6 +910,158 @@ select option {
     background: var(--accent);
     color: var(--dark);
     border-color: var(--accent);
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    font-size: 1.2rem;
+    color: var(--primary);
+    pointer-events: none;
+}
+
+/* Bannière promotionnelle fixe */
+.promo-banner {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: linear-gradient(135deg, #f72585, #3a0ca3);
+    color: white;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    animation: slideDown 0.5s ease-out;
+}
+
+/* Icône cadeau */
+.promo-banner i {
+    margin-right: 8px;
+    color: var(--gold);
+}
+
+.close-banner {
+    background: transparent;
+    border: none;
+    color: white;
+    margin-left: 15px;
+    cursor: pointer;
+    padding: 0 5px;
+    font-size: 1rem;
+}
+
+.close-banner:hover {
+    opacity: 1;
+}
+
+/* Conteneur des bannières */
+.banner-container {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style commun des bannières */
+.promo-banner {
+    text-align: center;
+    padding: 12px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    animation: slideDown 0.5s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Bannière offre spéciale */
+.offer-banner {
+    background: linear-gradient(135deg, #f72585, #3a0ca3);
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* Bannière livraison */
+.shipping-banner {
+    background: linear-gradient(135deg, #aebdc2, #03081c);
+    color: white;
+}
+
+/* Icônes */
+.promo-banner i {
+    font-size: 1.2rem;
+}
+
+/* Animation */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Bouton fermeture */
+.close-banner {
+    background: transparent;
+    border: none;
+    color: white;
+    margin-left: 15px;
+    cursor: pointer;
+    padding: 0 5px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.close-banner:hover {
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .promo-banner {
+        font-size: 0.85rem;
+        padding: 10px 5px;
+        flex-wrap: wrap;
+    }
+    
+    .promo-banner i {
+        font-size: 1rem;
+    }
+}
+
+/* Animation d'apparition */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Pour éviter que le header ne cache la bannière */
+header {
+    position: relative;
+    z-index: 101;
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+    .promo-banner {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+        line-height: 1.4;
+    }
 }
 
 /* Responsive */
@@ -1029,7 +1175,7 @@ select option {
     
     <div class="container">
         <h1 class="logo"></h1>
-        <p class="tagline">Parfums originaux & articles personnalisés pour sublimer votre style</p>
+        <p class="tagline"><br>✨</p>
         
         <div class="nav-links">
             <a href="#personnalises">Articles Personnalisés</a>
@@ -1041,132 +1187,19 @@ select option {
     
     <!-- Main Content -->
     <main class="container">
-        <!-- Personalized Products Section -->
-        <section id="personnalises">
-            <div class="section-title">
-                <h2>Articles Personnalisés</h2>
+
+        <div class="banner-container">
+            <div class="promo-banner offer-banner">
+                <i class="fas fa-gift"></i>
+                <span>Offre spéciale : À l'achat de 50ml, bénéficiez de 10ml gratuit !</span>
             </div>
             
-            <div class="products-grid">
-                <!-- Hoodie -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="./Img/hoodies.jpeg" alt="Hoodie personnalisé">
-                        <span class="product-badge">Populaire</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Hoodie Personnalisé</h3>
-                        <p class="product-description">Hoodie de haute qualité avec impression personnalisée. Disponible en plusieurs couleurs.</p>
-                        <div class="size-options">
-                            <span class="size-option">S</span>
-                            <span class="size-option">M</span>
-                            <span class="size-option active">L</span>
-                            <span class="size-option">XL</span>
-                            <span class="size-option">XXL</span>
-                        </div>
-                        <p class="product-price">Consulter le prix</p>
-                        <button class="add-whatsapp"><i class="fas fa-shopping-cart"></i> Personnaliser</button>
-                    </div>
-                </div>
-                
-                <!-- T-Shirt -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="./Img/tshirt.png" alt="T-Shirt personnalisé">
-                        <span class="product-badge">Populaire</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">T-Shirt Personnalisé</h3>
-                        <p class="product-description">T-Shirt 100% coton avec votre design unique. Résistant aux lavages.</p>
-                        <div class="size-options">
-                            <span class="size-option">XS</span>
-                            <span class="size-option active">S</span>
-                            <span class="size-option">M</span>
-                            <span class="size-option">L</span>
-                            <span class="size-option">XL</span>
-                        </div>
-                        <p class="product-price">Consulter le prix</p>
-                        <button class="add-whatsapp"><i class="fas fa-shopping-cart"></i> Personnaliser</button>
-                    </div>
-                </div>
-                
-                <!-- Assiettes -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="./Img/assiette.png" alt="Assiette personnalisée">
-                        <span class="product-badge">Nouveau</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Assiette Personnalisée</h3>
-                        <p class="product-description">Assiette céramique avec impression durable. Parfait pour un cadeau unique.</p>
-                        <div class="size-options">
-                            <span class="size-option active">20cm</span>
-                            <span class="size-option">25cm</span>
-                            <span class="size-option">30cm</span>
-                        </div>
-                        <p class="product-price">Consulter le prix</p>
-                        <button class="add-whatsapp"><i class="fas fa-shopping-cart"></i> Personnaliser</button>
-                    </div>
-                </div>
-                
-                <!-- Tasse -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://kalmaz.ma/cdn/shop/files/Mugporcelaine-03_1200x1200_crop_center.jpg?v=1712275808" alt="Tasse personnalisée">
-                        <span class="product-badge">Nouveau</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Tasse Personnalisée</h3>
-                        <p class="product-description">Tasse en céramique de haute qualité avec votre design. Résiste aux micro-ondes.</p>
-                        <div class="size-options">
-                            <span class="size-option active">30cl</span>
-                            <span class="size-option">40cl</span>
-                        </div>
-                        <p class="product-price">Consulter le prix</p>
-                        <button class="add-whatsapp"><i class="fas fa-shopping-cart"></i> Personnaliser</button>
-                    </div>
-                </div>
-                
-                <!-- Stickers -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://static.tadaaz.be/api/2/img/tadprod/TA03905-2400001-02/sticker-transparent-personnalise-8-x-2-5-cm-TA03905-2400001-02-1.jpg/resize?size=599&auth=MjIwNzUzNzIxMg__" alt="Stickers personnalisés">
-                        <span class="product-badge">Top Vente</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Stickers Personnalisés</h3>
-                        <p class="product-description">Lot de 10 stickers haute qualité avec votre design. Résistants à l'eau et aux UV.</p>
-                        <div class="size-options">
-                            <span class="size-option active">5x5cm</span>
-                            <span class="size-option">10x10cm</span>
-                            <span class="size-option">15x15cm</span>
-                        </div>
-                        <p class="product-price">Consulter le prix</p>
-                        <button class="add-whatsapp"><i class="fas fa-shopping-cart"></i> Personnaliser</button>
-                    </div>
-                </div>
-
-                <!-- Casquettes -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="./Img/casquette.png" alt="Stickers personnalisés">
-                        <span class="product-badge">Top Vente</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Casquettes Personnalisées</h3>
-                        <p class="product-description">Casquette de haute qualité avec votre design personnalisé.</p>
-                        <div class="size-options">
-                            <span class="size-option active">5x5cm</span>
-                            <span class="size-option">10x10cm</span>
-                            <span class="size-option">15x15cm</span>
-                        </div>
-                        <p class="product-price">Consulter le prix</p>
-                        <button class="add-whatsapp"><i class="fas fa-shopping-cart"></i> Personnaliser</button>
-                    </div>
-                </div>
+            <div class="promo-banner shipping-banner">
+                <i class="fas fa-truck"></i>
+                <span>Livraison gratuite pour tous vos achats !</span>
             </div>
-        </section>
-        
+        </div>
+
         <!-- Perfumes Section -->
         <section id="parfums">
             <div class="section-title">
@@ -1175,6 +1208,7 @@ select option {
 
             <div class="filter-controls">
                 <div class="filter-group">
+                    <span class="search-icon">🔍</span>
                     <input type="text" id="search-input" placeholder="Rechercher un parfum...">
                 </div>
                 
@@ -1851,12 +1885,6 @@ select option {
                     </div>
                 </div>
 
-                
-
-                
-
-                
-
                 <!-- Parfum 23 -->
                 <div class="product-card perfume-card" data-genre="femme" data-saison="hiver">
                     <div class="product-image">
@@ -1939,6 +1967,132 @@ select option {
                 </div>
 
 
+            </div>
+        </section>
+
+        <!-- Personalized Products Section -->
+        <section id="personnalises">
+            <div class="section-title">
+                <h2>Articles Personnalisés</h2>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Hoodie -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="./Img/hoodies.jpeg" alt="Hoodie personnalisé">
+                        <span class="product-badge">Populaire</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Hoodie Personnalisé</h3>
+                        <p class="product-description">Hoodie de haute qualité avec impression personnalisée. Disponible en plusieurs couleurs.</p>
+                        <div class="size-options">
+                            <span class="size-option">S</span>
+                            <span class="size-option">M</span>
+                            <span class="size-option active">L</span>
+                            <span class="size-option">XL</span>
+                            <span class="size-option">XXL</span>
+                        </div>
+                        <p class="product-price">Consulter le prix</p>
+                        <button class="add-whatsapp"><i class="fas fa-shopping-cart"></i> Personnaliser</button>
+                    </div>
+                </div>
+                
+                <!-- T-Shirt -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="./Img/tshirt.png" alt="T-Shirt personnalisé">
+                        <span class="product-badge">Populaire</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">T-Shirt Personnalisé</h3>
+                        <p class="product-description">T-Shirt 100% coton avec votre design unique. Résistant aux lavages.</p>
+                        <div class="size-options">
+                            <span class="size-option">XS</span>
+                            <span class="size-option active">S</span>
+                            <span class="size-option">M</span>
+                            <span class="size-option">L</span>
+                            <span class="size-option">XL</span>
+                        </div>
+                        <p class="product-price">Consulter le prix</p>
+                        <button class="add-whatsapp"><i class="fas fa-shopping-cart"></i> Personnaliser</button>
+                    </div>
+                </div>
+                
+                <!-- Assiettes -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="./Img/assiette.png" alt="Assiette personnalisée">
+                        <span class="product-badge">Nouveau</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Assiette Personnalisée</h3>
+                        <p class="product-description">Assiette céramique avec impression durable. Parfait pour un cadeau unique.</p>
+                        <div class="size-options">
+                            <span class="size-option active">20cm</span>
+                            <span class="size-option">25cm</span>
+                            <span class="size-option">30cm</span>
+                        </div>
+                        <p class="product-price">Consulter le prix</p>
+                        <button class="add-whatsapp"><i class="fas fa-shopping-cart"></i> Personnaliser</button>
+                    </div>
+                </div>
+                
+                <!-- Tasse -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://kalmaz.ma/cdn/shop/files/Mugporcelaine-03_1200x1200_crop_center.jpg?v=1712275808" alt="Tasse personnalisée">
+                        <span class="product-badge">Nouveau</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Tasse Personnalisée</h3>
+                        <p class="product-description">Tasse en céramique de haute qualité avec votre design. Résiste aux micro-ondes.</p>
+                        <div class="size-options">
+                            <span class="size-option active">30cl</span>
+                            <span class="size-option">40cl</span>
+                        </div>
+                        <p class="product-price">Consulter le prix</p>
+                        <button class="add-whatsapp"><i class="fas fa-shopping-cart"></i> Personnaliser</button>
+                    </div>
+                </div>
+                
+                <!-- Stickers -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://static.tadaaz.be/api/2/img/tadprod/TA03905-2400001-02/sticker-transparent-personnalise-8-x-2-5-cm-TA03905-2400001-02-1.jpg/resize?size=599&auth=MjIwNzUzNzIxMg__" alt="Stickers personnalisés">
+                        <span class="product-badge">Top Vente</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Stickers Personnalisés</h3>
+                        <p class="product-description">Lot de 10 stickers haute qualité avec votre design. Résistants à l'eau et aux UV.</p>
+                        <div class="size-options">
+                            <span class="size-option active">5x5cm</span>
+                            <span class="size-option">10x10cm</span>
+                            <span class="size-option">15x15cm</span>
+                        </div>
+                        <p class="product-price">Consulter le prix</p>
+                        <button class="add-whatsapp"><i class="fas fa-shopping-cart"></i> Personnaliser</button>
+                    </div>
+                </div>
+
+                <!-- Casquettes -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="./Img/casquette.png" alt="Stickers personnalisés">
+                        <span class="product-badge">Top Vente</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Casquettes Personnalisées</h3>
+                        <p class="product-description">Casquette de haute qualité avec votre design personnalisé.</p>
+                        <div class="size-options">
+                            <span class="size-option active">5x5cm</span>
+                            <span class="size-option">10x10cm</span>
+                            <span class="size-option">15x15cm</span>
+                        </div>
+                        <p class="product-price">Consulter le prix</p>
+                        <button class="add-whatsapp"><i class="fas fa-shopping-cart"></i> Personnaliser</button>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -2171,7 +2325,7 @@ select option {
     let total = 0;
 
     panierLocal.forEach((item, index) => {
-        const prix = getPrixProduit(item.taille);
+        const prix = item.prix;
         const quantite = item.quantite || 1;
         const sousTotal = prix * quantite;
         total += sousTotal;
@@ -2209,10 +2363,21 @@ select option {
 
         // Ajouter le bouton supprimer
         row.querySelector('.btn-supprimer')?.addEventListener('click', () => {
-            panierLocal.splice(index, 1);
+            const produitSupprime = panierLocal[index]; // 🔧 on récupère le produit à supprimer
+
+            panierLocal.splice(index, 1); // on le retire
             localStorage.setItem("panier", JSON.stringify(panierLocal));
-            afficherPanier();
+            afficherPanier(); // on recharge le panier visuellement
             showAlert("🗑️ Article supprimé du panier.");
+
+            // Réinitialiser la quantité dans la carte produit correspondante
+            document.querySelectorAll('.product-card').forEach(card => {
+                const title = card.querySelector('.product-title')?.textContent.trim();
+                if (title === produitSupprime.nom) {
+                    const qtySpan = card.querySelector('.quantite-val');
+                    if (qtySpan) qtySpan.textContent = "1";
+                }
+            });
         });
 
         panierTable.appendChild(row);
