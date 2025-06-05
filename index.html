@@ -51,7 +51,6 @@
 /* Style minimaliste mais élégant pour le header */
 header {
     background: 
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
         url('./Img/logo.jpg');
     background-size: cover;
     background-position: center;
@@ -62,6 +61,8 @@ header {
     text-align: center;
     position: relative;
     overflow: hidden;
+    min-height: 300px;
+    background-color: transparent !important;
 }
 
 /* Conteneur du contenu */
@@ -152,10 +153,15 @@ header {
 
 /* Version mobile */
 @media (max-width: 768px) {
-    header {
-        padding: 3rem 0;
+     header {
+        padding: 2rem 0;
+        height: 5vh;
+        background-size: contain; /* Rétrécit l’image pour qu’elle soit entièrement visible */
+        background-position: top center;
+        background-attachment: scroll; /* évite les problèmes de scroll sur mobile */
+        background-color: transparent !important;
     }
-    
+
     .logo {
         font-size: 2.5rem;
     }
@@ -164,14 +170,34 @@ header {
         font-size: 1.1rem;
         padding: 0 1rem;
     }
-    
-    .nav-links {
-        flex-direction: column;
-        gap: 0.8rem;
+
+    .container {
+    background: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
     }
-    
+
+    .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    flex-direction: row !important; /* Force en ligne */
+    background: transparent !important;
+    }
+
     .nav-links a {
-        padding: 0.6rem 1rem;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+    white-space: nowrap; /* évite les retours à la ligne */
+    }
+
+    .nav-links a:hover {
+        color: var(--primary);
     }
 }
         
@@ -1175,7 +1201,7 @@ header {
     
     <div class="container">
         <h1 class="logo"></h1>
-        <p class="tagline"><br>✨</p>
+        <p class="tagline">✨</p>
         
         <div class="nav-links">
             <a href="#personnalises">Articles Personnalisés</a>
