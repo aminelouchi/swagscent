@@ -52,37 +52,79 @@
 
 /* Style minimaliste mais élégant pour le header */
 header {
-    background: 
-        url('./Img/logo.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: white;
-    padding: 4rem 0;
-    text-align: center;
     position: relative;
+    height: 100vh; /* Plein écran, tu peux adapter */
+    color: white;
+    text-align: center;
     overflow: hidden;
-    background-color: transparent !important;
+    padding: 4rem 0;
 }
 
-@media (min-width: 495px) and (max-width: 770px) {
+#header-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+header * {
+    position: relative;
+    z-index: 1; /* Le contenu passe devant la vidéo */
+}
+
+
+/* Petits téléphones en portrait */
+@media (max-width: 480px) and (orientation: portrait) {
     header {
-        background: 
-            url('./Img/logo.jpg');
-        background-size: contain; /* On peut préférer 'contain' ici pour éviter le zoom excessif */
-        background-position: center top;
-        background-repeat: no-repeat;
-        background-attachment: scroll; /* 'fixed' peut poser souci sur certains mobiles */
-        color: white;
-        padding: 3rem 0;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-        background-color: transparent !important;
-        min-height: 700px;
+        padding: 2rem 0;
+        height: 70vh;
+    }
+    #header-video {
+        object-fit: cover;
     }
 }
+
+/* Petits téléphones en paysage (rotation horizontale) */
+@media (max-width: 768px) and (orientation: landscape) {
+    header {
+        height: 60vh;
+    }
+    #header-video {
+        object-fit: cover;
+    }
+}
+
+/* Tablettes en portrait */
+@media (min-width: 481px) and (max-width: 1024px) and (orientation: portrait) {
+    header {
+        height: 80vh;
+    }
+}
+
+/* Tablettes en paysage */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+    header {
+        height: 75vh;
+    }
+}
+
+/* Écrans moyens (ordinateurs portables) */
+@media (min-width: 1025px) and (max-width: 1366px) {
+    header {
+        height: 90vh;
+    }
+}
+
+/* Très grands écrans (4K, etc.) */
+@media (min-width: 1600px) {
+    header {
+        height: 100vh;
+    }
+}
+
 
 
 /* Conteneur du contenu */
@@ -123,6 +165,7 @@ header {
 
 /* Navigation épurée */
 .nav-links {
+    margin-top: 250px;
     display: inline-flex;
     gap: 1.5rem;
     animation: fadeIn 1s ease-out 0.6s both;
@@ -158,6 +201,86 @@ header {
 .nav-links a:hover::after {
     width: 50%;
 }
+
+/* Très petits écrans en portrait (téléphones) */
+@media (max-width: 480px) and (orientation: portrait) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 150px;
+        gap: 1rem;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* Téléphones en paysage (rotation) */
+@media (max-width: 768px) and (orientation: landscape) {
+    .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 100px;
+        gap: 1rem;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+        padding: 0.4rem 1rem;
+    }
+}
+
+/* Tablettes portrait */
+@media (min-width: 481px) and (max-width: 1024px) and (orientation: portrait) {
+    .nav-links {
+        margin-top: 180px;
+        gap: 1.2rem;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+}
+
+/* Tablettes paysage */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+    .nav-links {
+        margin-top: 150px;
+        gap: 1.2rem;
+    }
+
+    .nav-links a {
+        font-size: 0.95rem;
+    }
+}
+
+/* Ordinateurs standards */
+@media (min-width: 1025px) and (max-width: 1366px) {
+    .nav-links {
+        margin-top: 220px;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+}
+
+/* Très grands écrans */
+@media (min-width: 1600px) {
+    .nav-links {
+        margin-top: 300px;
+        gap: 2rem;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+        padding: 0.8rem 2rem;
+    }
+}
+
 
 /* Animation d'apparition */
 @keyframes fadeIn {
@@ -200,6 +323,7 @@ header {
     }
 
     .nav-links {
+    margin-top: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1093,11 +1217,21 @@ select option {
     }
 }
 
-/* Pour éviter que le header ne cache la bannière */
-header {
-    position: relative;
-    z-index: 101;
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Ajuste l’opacité ici */
+    z-index: 0;
 }
+
+header * {
+    position: relative;
+    z-index: 1; /* Le contenu reste au-dessus */
+}
+
 
 /* Version mobile */
 @media (max-width: 768px) {
@@ -1214,12 +1348,19 @@ header {
     
     <!-- Header -->
     <header>
+
+        <video autoplay muted loop id="header-video">
+    <source src="./Img/header.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo HTML5.
+</video>
+<div class="video-overlay"></div>
+
+
     <!-- Particules flottantes -->
     <div class="floating-particles" id="particles"></div>
     
     <div class="container">
         <h1 class="logo"></h1>
-        <p class="tagline">✨</p>
         
         <div class="nav-links">
             <a href="#personnalises">Articles Personnalisés</a>
@@ -2214,7 +2355,7 @@ header {
                 <p><i class="fas fa-envelope"></i> swagscentofficial@gmail.com</p>
                 
                 <div class="social-links">
-                    <a href="https://www.facebook.com/share/19gzFASMDW/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/share/14nrhYNnH9/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/swagscent?igsh=MTdnd3k3aTkxajhtYQ=="><i class="fab fa-instagram"></i></a>
                     <a href="https://wa.me/+212669411333?text=Bonjour"><i class="fab fa-whatsapp"></i></a>
                     <a href="http://www.tiktok.com/@swagscent"><i class="fab fa-tiktok"></i></a>
@@ -2627,6 +2768,14 @@ document.addEventListener("DOMContentLoaded", function() {
     genreFilter.addEventListener("change", filterCards);
     saisonFilter.addEventListener("change", filterCards);
 });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const video = document.getElementById("header-video");
+        if (video) {
+            video.playbackRate = 0.5; // 0.5 = moitié de la vitesse normale
+        }
+    });
 </script>
 
 
